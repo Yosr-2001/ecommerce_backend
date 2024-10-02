@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
@@ -17,7 +18,13 @@ Route::middleware('api')->group(function () {
 Route::middleware('api')->group(function () {
     Route::resource('scategories', ScategorieController::class);
 });
-    /*Route::get("/categories",[CategorieController::class,"index"]);
+Route::middleware('api')->group(function () {
+    Route::resource('article', ArticleController::class);
+});
+Route::get("/listarticles/{idscat}", [ArticleController::class, 'showArticlesBySCAT']);
+Route::get("/articles/art/articlesPaginate}", [ArticleController::class, 'articlesPaginate']);
+
+ /*Route::get("/categories",[CategorieController::class,"index"]);
     Route::post("/categories",[CategorieController::class,"store"]);
     Route::get("/categories/{id}",[CategorieController::class,"show"]);
     
