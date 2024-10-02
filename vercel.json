@@ -1,0 +1,36 @@
+{
+    "version": 2,
+    "framework": null,
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
+    },
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://vercel.com/yosrs-projects-fa3b81c4",
+        "APP_KEY": "base64:KRnhRNZp7qPcYznqRtW+lS0SRL8TPayc/Byp9RvbSWQ=",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "mysql-8e5d0e6-yosrbenamar9-7d2b.c.aivencloud.com",
+        "DB_PORT": "28455",
+        "DB_DATABASE": "dbcommerce",
+        "DB_USERNAME": "iit2024",
+        "DB_PASSWORD": "AVNS_yjOcKppBBIWuW_WT7TQ"
+    }
+}
