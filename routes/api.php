@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ScategorieController;
+use App\Http\Controllers\StripeController;
 use App\Models\Scategorie;
 
 Route::get('/user', function (Request $request) {
@@ -24,8 +25,9 @@ Route::middleware('api')->group(function () {
 Route::get("/listarticles/{idscat}", [ArticleController::class, 'showArticlesBySCAT']);
 Route::get("/articles/art/articlesPaginate}", [ArticleController::class, 'articlesPaginate']);
 
- /*Route::get("/categories",[CategorieController::class,"index"]);
+/*Route::get("/categories",[CategorieController::class,"index"]);
     Route::post("/categories",[CategorieController::class,"store"]);
     Route::get("/categories/{id}",[CategorieController::class,"show"]);
     
     */
+Route::post('/payment/processpayment', [StripeController::class,  'processPayment']);
